@@ -1,0 +1,66 @@
+task_name: fsdp_debug
+
+train:
+  # for ditributed training
+  local_rank: 0
+  # random seed
+  seed: 2002
+
+  # training hyperparameters
+  batch_size: 8
+  lr: 1e-4
+  epochs: 150
+  gradient_accumulation_steps: 20
+  amp: True
+  save_ckpt_freq: 20
+  resume: False
+
+  model:
+    encoder: transformer
+    # pretrained: /home/jwu418/workspace/scMultiomics/experiment/atac_cross_pretrain/ckpts/Epoch_32_Step_26144_atac_cross_pretrain.pth # set to None if not using pretrained model
+    pretrained: null
+    embedding_method: id_only
+    atac_max_len: 8000
+    rna_max_len: 8000
+    embedding_dim: 512
+    num_layers: 6
+    head_num: 8
+    head_dim: 1024
+    dropout: 0.2
+    additional_config_path: /path/to/additional_config.json
+    cell_emb_style: cls
+    mvc_arch_style: concat query
+    use_batch_labels: False
+  
+  task_weight:
+    cell_type: 0.0
+    mvc: 1.0
+
+valid:
+  freq: 2
+
+data:
+  bin_num: &bn 2
+  append_cls: True
+  train:
+    atac_path: /home/jwu418/workspace/data/ours/test/bmmc_kidney_paired_atac.h5ad
+    atac_key: X
+    rna_path: /home/jwu418/workspace/data/ours/test/bmmc_kidney_rna_binned_binning_2.h5ad
+    rna_key: X_binned
+  test:
+    atac_path: /home/jwu418/workspace/data/ours/valid/bmmc_kidney_paired_atac.h5ad
+    atac_key: X
+    rna_path: /home/jwu418/workspace/data/ours/valid/bmmc_kidney_rna_binned_binning_2.h5ad
+    rna_key: X_binned
+
+vocab:
+  rna_path: /home/jwu418/workspace/data/ours/vocab/bmmc_rna_vocab.json
+  atac_path: /home/jwu418/workspace/data/ours/vocab/bmmc_atac_vocab.json
+  cell_type_path: /home/jwu418/workspace/data/ours/vocab/bmmc_kidney_cell_vocab.json
+  batch_path: /home/jwu418/workspace/data/ours/vocab/bmmc_kidney_batch_vocab.json
+  special_tokens:
+    pad: {token: <pad>, value: 2}
+    # value of the mask is 1 plus bin_num
+    mask: {token: <mask>, value: 3}
+    cls: {token: <cls>, value: 0}
+
