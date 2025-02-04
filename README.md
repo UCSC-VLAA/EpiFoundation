@@ -14,8 +14,8 @@ Foundation models exhibit strong capabilities for downstream tasks by learning g
 
 ## Data and model Access
 
-- Our paired scRNA-seq and scATAC-seq data for pre-training and fine-tuning can be found at [EpiFoundation Data]().
-- The pre-trained model weights can be found at [EpiFoundation Model]().
+- Our paired scRNA-seq and scATAC-seq data for pre-training and fine-tuning can be found at [MiniAtlas](https://huggingface.co/datasets/UCSC-VLAA/MiniAtlas).
+- The pre-trained model weights can be found at [EpiFoundation](https://huggingface.co/UCSC-VLAA/EpiFoundation).
 
 ## Quick Start
 
