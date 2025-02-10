@@ -104,6 +104,16 @@ We would like to thank the TPU Research Cloud (TRC) program and the Google Cloud
 ## Citation
 
 ```
+@article {Wu2025.02.05.636688,
+	author = {Wu, Juncheng and Wan, Changxin and Ji, Zhicheng and Zhou, Yuyin and Hou, Wenpin},
+	title = {EpiFoundation: A Foundation Model for Single-Cell ATAC-seq via Peak-to-Gene Alignment},
+	elocation-id = {2025.02.05.636688},
+	year = {2025},
+	doi = {10.1101/2025.02.05.636688},
+	URL = {https://www.biorxiv.org/content/early/2025/02/08/2025.02.05.636688},
+	eprint = {https://www.biorxiv.org/content/early/2025/02/08/2025.02.05.636688.full.pdf},
+	journal = {bioRxiv}
+}
 ```
 
 ## Contact
