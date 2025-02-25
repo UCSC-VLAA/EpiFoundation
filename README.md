@@ -118,4 +118,4 @@ We would like to thank the TPU Research Cloud (TRC) program and the Google Cloud
 
 ## Contact
 
-If you have any questions, please feel free to raise an issue or contact us directly: Juncheng Wu (jwu418@ucsc.edu)
+If you have any questions, please feel free to raise an issue or contact us directly: Juncheng Wu (jwu418@ucsc.edu), Changxin Wan (changxin.wan@duke.edu).
